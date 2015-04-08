@@ -1,0 +1,81 @@
+@(activePage:String)
+
+<div class="container">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="row">
+                @*<div class="col-xs-6 col-sm-2 col-md-3 col-lg-3 ">*@
+                    <div class="navbar-header ">
+                        <button type="button" class="navbar-toggle navbar-right" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="active sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="/"><img src="@routes.Assets.at("images/brand.jpg")" alt="HyperMarket" title="Hypermarket" width="30%" height="50px" /></a>
+                    </div>
+
+                @*</div>*@
+                @*<div class="col-xs-6 col-sm-10 col-md-9 col-lg-7 col-lg-offset-2">*@
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+                        <ul class="nav navbar-nav">
+                            <li class="@if(activePage == "home") {active}"><a href="@routes.Application.index()"><b>HOME</b></a></li>
+                            <li class="dropdown act">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <b>1-BO'LIM</b> <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="@if(activePage == "shirinlik") {active}"><a href="@routes.First.list()"><strong>Shirinliklar</strong></a></li>
+                                    <li><a href="">Kalbasa va go'sht maxsulotlari</a></li>
+                                    <li><a href="">Sut va sut maxsulotlari</a></li>
+                                    <li><a href="">Non va kulinariya maxsulotlari</a></li>
+                                    <li><a href="">Poliz ekinlari</a></li>
+                                    <li><a href="">Mevalar</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <b>2-BO'LIM</b><span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Elektr jixozlar</a></li>
+                                    <li><a href="">Maishiy texnika</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <b>3-BO'LIM</b><span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Erkaklar uchun kiyimlar</a></li>
+                                    <li><a href="">Ayollar uchun kiyimlar</a></li>
+                                    <li><a href="">Bolalar uchun kiyimlar</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <b>4-BO'LIM</b><span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Esdalik uchun sovg'alar</a></li>
+                                    <li><a href="">O'yinchoqlar</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <b>5-BO'LIM</b><span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Uy jixozlar</a></li>
+                                    <li><a href="">Ishxona jixozlari</a></li>
+                                    <li><a href="">Oshxona jixozlari</a></li>
+                                </ul>
+                            </li>
+                            <li class="@if(activePage == "kafe") {active}"><a href="@routes.Application.kafe()"><strong>KAFE</strong></a></li>
+                        </ul>
+                    </div>
+                @*</div>*@
+            </div>
+        </div>
+    </nav>
+</div>
