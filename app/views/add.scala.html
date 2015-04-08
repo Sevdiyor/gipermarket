@@ -1,7 +1,6 @@
 @()
 @main("Add"){
     @navbar("add")
-
     <div class="container main-content">
         <h2 class="text-center">ADD new sweet</h2>
         <form action="" class="@routes.First.add()" method="post">
@@ -12,10 +11,10 @@
             </div>
             <div class="form-group">
                 <label for="inp-img">Image</label>
-                <textarea type="text" class="form-control" id="inp-img"
-                name="imgUrl" required=""></textarea>
+                <input type="text" class="form-control" id="inp-img"
+                name="imgUrl" required=""/>
             </div>
-            <div class="form-control">
+            <div class=" form-group">
                 <label for="inp-cost">Cost</label>
                 <input type="text" class="form-control" id="inp-cost"
                 name="cost" required=""/>

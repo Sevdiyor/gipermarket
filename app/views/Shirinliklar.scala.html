@@ -1,17 +1,17 @@
 @(shirinliklarr: List[Sweet])
 
-@main("Shirinliklar") {
-
+@main("Sweets") {
     @navbar("shirinlik")
-    <div class="main-bg">
-        <div class="container past">
+    <body class="main-bg">
+        <div class="container">
             <h1 class="text-center">Sweets.</h1>
-            <table class="table table-striped">
+            <table class="table table-hover">
                 <thead>
-                    <tr>
-                        <th>Shirinlik nomi</th>
-                        <th>Shirinlik rasmi</th>
-                        <th>Shirinlik narxi</th>
+                    <tr class="bg-primary">
+                        <th>Shirinlik_nomi</th>
+                        <th>Shirinlik_rasmi</th>
+                        <th>Shirinlik_narxi</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,11 +20,17 @@
                         <td>@n.name</td>
                         <td><img style="width: 20%" src="@routes.Assets.at("images/"+n.imgUrl)" alt=""/></td>
                         <td>@n.cost</td>
+                        <td>
+                            <a href="@routes.First.remove(n.id.get)">
+                                <button class="btn btn-danger">Delete</button>
+                            </a>
+                        </td>
                     </tr>
                 }
                 </tbody>
             </table>
+            <a href="@routes.First.add()" class="btn btn-info btn-lg btn-block" role="button">add new sweet</a>
         </div>
-    </div>
+    </body>
     @footer("shirinlik")
 }

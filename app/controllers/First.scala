@@ -28,13 +28,12 @@ object First extends  Controller{
     val name = formParams.get("name")(0)
     val imgUrl = formParams.get("imgUrl")(0)
     val cost = formParams.get("cost")(0)
-
-//    val sweetId = (sweets returning sweets.map(_.id)) +=Sweet(None, name, imgUrl, cost)
+    val sweetId = (sweets returning sweets.map(_.id)) += Sweet(None, name, imgUrl, cost)
     Redirect(routes.First.list())
   }
 
   def remove(id: Int)= DBAction{ implicit request =>
-    sweets.filter(_.id === id).delete
+    sweets.filter(_.id === id).delete;
     Redirect(routes.First.list())
 
   }

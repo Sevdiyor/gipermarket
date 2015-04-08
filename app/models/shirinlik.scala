@@ -6,7 +6,7 @@ import play.api.db.slick.Config.driver.simple._
 case class Sweet(id: Option[Int],
                   name: String,
                   imgUrl: String,
-                  cost: Double)
+                  cost: String)
 
 class SweetTable(tag: Tag) extends Table[Sweet](tag, "Sweet"){
   def id = column[Int]("ID", O.PrimaryKey, O.AutoInc)
@@ -15,7 +15,7 @@ class SweetTable(tag: Tag) extends Table[Sweet](tag, "Sweet"){
 
   def imgUrl = column[String]("IMGURL", O.Default(""))
 
-  def cost = column[Double]("COST", O.Default(0))
+  def cost = column[String]("COST", O.Default(""))
 
   def * = (id.?, name, imgUrl, cost) <> (Sweet.tupled, Sweet.unapply _)
 }

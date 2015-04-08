@@ -96,7 +96,7 @@
 
 .main-bg {
     background: rgb(216, 208, 218);
-    background-size: cover;
+    /*background-size: cover;*/
 }
 .main-content {
     padding: 80px 0;

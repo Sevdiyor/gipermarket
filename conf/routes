@@ -9,4 +9,6 @@ GET        /                    controllers.Application.index
 GET        /assets/*file        controllers.Assets.at(path="/public", file)
 GET        /kafe                controllers.Application.kafe
 GET        /shirinliklar        controllers.First.list
-GET        /add                 controllers.First.add
+GET        /add                 controllers.First.showAddForm
+POST       /add                 controllers.First.add
+GET        /city/:id/remove     controllers.First.remove(id: Int)
