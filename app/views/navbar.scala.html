@@ -72,6 +72,18 @@
                                 </ul>
                             </li>
                             <li class="@if(activePage == "kafe") {active}"><a href="@routes.Application.kafe()"><strong>KAFE</strong></a></li>
+
+                            <li class="dropdown act">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <b>Work with lists</b> <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="@if(activePage == "list") {active}"><a href="@routes.First.list()"><strong>Somethings</strong></a></li>
+                                    <li class="@if(activePage == "add") {active}"><a href="@routes.First.add()"><strong>Add new ...</strong></a></li>
+                                    <li class="@if(activePage == "list") {active}"><a href="@routes.Sections.list()"><strong>Sections list</strong></a></li>
+                                    <li class="@if(activePage == "list") {active}"><a href="@routes.Sections.add()"><strong>Add new sections</strong></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 @*</div>*@

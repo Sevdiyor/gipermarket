@@ -1,4 +1,4 @@
-@(shirinliklarr: List[Sweet])
+@(candy: List[anyForDisp])
 
 @main("Sweets") {
     @navbar("shirinlik")
@@ -8,20 +8,25 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="bg-primary">
-                        <th>Shirinlik_nomi</th>
-                        <th>Shirinlik_rasmi</th>
-                        <th>Shirinlik_narxi</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Cost</th>
+                        <th>Section</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                @for(n <- shirinliklarr) {
+                @for(n <- candy) {
                     <tr>
-                        <td>@n.name</td>
-                        <td><img style="width: 20%" src="@routes.Assets.at("images/"+n.imgUrl)" alt=""/></td>
-                        <td>@n.cost</td>
+                        <td>@n.any.name</td>
+                        <td><img style="width: 20%" src="@routes.Assets.at("images/"+n.any.imgUrl)" alt=""/></td>
+                        <td>@n.any.cost</td>
+                        <td>@n.sectionName</td>
                         <td>
-                            <a href="@routes.First.remove(n.id.get)">
+                            <a href="@routes.First.showEditForm(n.any.id.get)">
+                                <button class="btn btn-warning">Edit</button>
+                            </a>
+                            <a href="@routes.First.remove(n.any.id.get)">
                                 <button class="btn btn-danger">Delete</button>
                             </a>
                         </td>

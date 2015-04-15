@@ -1,0 +1,34 @@
+@(sections: List[Section])
+
+@main("Home") {
+
+    @navbar("listSections")
+
+    <div class="container main-content">
+
+        <h1 class="text-center">There our sections</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(i<- sections) {
+                <tr>
+                    <td>@i.name</td>
+                    <td>
+                        <a href="@routes.Sections.showEditForm(i.id.get)">
+                            <button class="btn btn-warning">Edit</button>
+                        </a>
+                        <a href="@routes.Sections.remove(i.id.get)">
+                            <button class="btn btn-danger">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+}

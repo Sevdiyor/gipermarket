@@ -6,9 +6,18 @@
 GET        /                    controllers.Application.index
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file        controllers.Assets.at(path="/public", file)
-GET        /kafe                controllers.Application.kafe
-GET        /shirinliklar        controllers.First.list
-GET        /add                 controllers.First.showAddForm
-POST       /add                 controllers.First.add
-GET        /city/:id/remove     controllers.First.remove(id: Int)
+GET        /assets/*file                controllers.Assets.at(path="/public", file)
+GET        /kafe                        controllers.Application.kafe
+GET        /somethings/new             @controllers.First.showAddForm
+POST       /somethings/new             @controllers.First.add
+GET        /somethings/list            @controllers.First.list
+GET        /any/:id/remove             @controllers.First.remove(id: Int)
+POST       /any/:id/edit               @controllers.First.update(id: Int)
+GET        /any/:id/edit               @controllers.First.showEditForm(id: Int)
+
+GET        /sections/list              @controllers.Sections.list
+GET        /sections/new               @controllers.Sections.showAddForm
+POST       /sections/new               @controllers.Sections.add
+GET        /section/:id/remove         @controllers.Sections.remove(id: Int)
+POST       /section/:id/edit           @controllers.Sections.update(id: Int)
+GET        /section/:id/edit           @controllers.Sections.showEditForm(id: Int)
