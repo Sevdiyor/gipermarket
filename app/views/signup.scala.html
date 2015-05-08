@@ -1,0 +1,88 @@
+@()
+@main("Sign Up") {
+    @navbar("signup")
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <legend><span class="glyphicon glyphicon-globe"></span> Sign up!</legend>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" method="post">
+                            <div class="form-group">
+                                <label for="firstname" class="control-label col-sm-3">First Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="firstname"
+                                    placeholder="First Name" name="firstname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="control-label col-sm-3">Last Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="lastname"
+                                    placeholder="Last Name" name="lastname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="secondname" class="control-label col-sm-3">Nick Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="secondname"
+                                    placeholder="Second Name" name="secondname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender" class="control-label col-sm-3">Gender</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<label class="radio-inline"><input type="radio" name="gender" id="male">Male</label>
+                                <label class="radio-inline"><input type="radio" name="gender" id="female">Female</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="district" class="control-label col-sm-3">District</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control " name="district" id="district">
+                                        <option value="">Urgench</option>
+                                        <option value="">Gurlen</option>
+                                        <option value="">Khiva</option>
+                                        <option value="">Yangibozor</option>
+                                        <option value="">Khazarasp</option>
+                                        <option value="">Yangiarik</option>
+                                        <option value="">Khanka</option>
+                                        <option value="">Bogot</option>
+                                        <option value="">Shovot</option>
+                                        <option value="">Kushkipir</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="control-label col-sm-3">Address:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="address"
+                                    placeholder="Address" name="address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descrip" class="control-label col-sm-3">Description:</label>
+                                <div class="col-sm-8">
+                                    <textarea type="text" class="form-control" id="descrip"
+                                    placeholder="Description" name="description" ></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="form-group">
+                            <div class="">
+                                <button class="btn-lg btn btn-success center-block"> Register </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+                        <span class="text-primary text-center">Thanks you for Registration !</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @footer("jhk")
+}

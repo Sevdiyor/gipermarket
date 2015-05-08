@@ -1,34 +1,37 @@
 @(sections: List[Section])
 @main("Add"){
     @navbar("add")
-    <div class="container main-content">
-        <h2 class="text-center">Add new something</h2>
-        <form action="" class="@routes.First.add()" method="post">
-            <div class="form-group">
-                <label for="inp-name">Name</label>
-                <input type="text" class="form-control" id="inp-name"
-                name="name" required=""/>
-            </div>
-            <div class="form-group">
-                <label for="inp-img">Image</label>
-                <input type="text" class="form-control" id="inp-img"
-                name="imgUrl" required=""/>
-            </div>
-            <div class=" form-group">
-                <label for="inp-cost">Cost</label>
-                <input type="text" class="form-control" id="inp-cost"
-                name="cost" required=""/>
-            </div>
-            <div class="form-group">
-                <label for="inp-section">Country</label>
-                <select name="sectionid" class="form-control" id="inp-section">
-                @for(section <- sections) {
-                    <option value="@section.id">@section.name</option>
-                }
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+    <body class="main-bg">
+        <div class="container">
+            <h2 class="text-center">Add new something</h2>
+            <form action="" class="@routes.First.add()" method="post">
+                <div class="form-group">
+                    <label for="inp-name">Name</label>
+                    <input type="text" class="form-control" id="inp-name"
+                    name="name" required=""/>
+                </div>
+                <div class="form-group">
+                    <label for="inp-img">Image</label>
+                    <input type="text" class="form-control" id="inp-img"
+                    name="imgUrl" required=""/>
+                </div>
+                <div class=" form-group">
+                    <label for="inp-cost">Cost</label>
+                    <input type="text" class="form-control" id="inp-cost"
+                    name="cost" required=""/>
+                </div>
+                <div class="form-group">
+                    <label for="inp-section">Country</label>
+                    <select name="sectionid" class="form-control" id="inp-section">
+                    @for(section <- sections) {
+                        <option value="@section.id">@section.name</option>
+                    }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </body>
+
     @footer("add")
 }

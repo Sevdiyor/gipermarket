@@ -13,4 +13,12 @@ object Application extends Controller {
     Ok(views.html.Kafe())
   }
 
+  def signIn = Action {
+    Ok(views.html.signin())
+  }
+
+  def signUp = Action {
+    Ok(views.html.signup())
+  }
+
 }

@@ -3,36 +3,37 @@
 @main("Edit") {
 
     @navbar("add")
-
-    <div class="container main-content">
-        <h2 class="text-center">Edit city</h2>
-        <form class="@routes.First.update(any.id.get)" method="post">
-            <div class="form-group">
-                <label for="inp-name">Name</label>
-                <input type="text" class="form-control" id="inp-name"
+    <body class="main-bg">
+        <div class="container">
+            <h2 class="text-center">Edit city</h2>
+            <form class="@routes.First.update(any.id.get)" method="post">
+                <div class="form-group">
+                    <label for="inp-name">Name</label>
+                    <input type="text" class="form-control" id="inp-name"
                     name="name" value="@any.name" required="">
-            </div>
-            <div class="form-group">
-                <label for="inp-imgUrl">Image</label>
-                <input type="text" class="form-control" id="inp-imgUrl"
+                </div>
+                <div class="form-group">
+                    <label for="inp-imgUrl">Image</label>
+                    <input type="text" class="form-control" id="inp-imgUrl"
                     name="imgUrl" value="@any.imgUrl"/>
-            </div>
-            <div class="form-group">
-                <label for="inp-cost">Cost</label>
-                <input type="text" class="form-control" id="inp-cost"
-                name="cost" value="@any.cost" />
-            </div>
-            <div class="form-group">
-                <label for="inp-section">Section</label>
-                <select name="section" class="form-control" id="inp-section">
-                @for(section <- sections) {
-                    <option value="@section.id">@section.name</option>
-                }
-                </select>
-            </div>
+                </div>
+                <div class="form-group">
+                    <label for="inp-cost">Cost</label>
+                    <input type="text" class="form-control" id="inp-cost"
+                    name="cost" value="@any.cost" />
+                </div>
+                <div class="form-group">
+                    <label for="inp-section">Section</label>
+                    <select name="section" class="form-control" id="inp-section">
+                    @for(section <- sections) {
+                        <option value="@section.id">@section.name</option>
+                    }
+                    </select>
+                </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </body>
     @footer("edit")
 }

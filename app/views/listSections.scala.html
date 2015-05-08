@@ -1,35 +1,36 @@
 @(sections: List[Section])
 
-@main("Home") {
+@main("Sections") {
 
     @navbar("listSections")
+    <body class="main-bg">
+        <div class="container">
 
-    <div class="container main-content">
-
-        <h1 class="text-center">There our sections</h1>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-            @for(i<- sections) {
-                <tr>
-                    <td>@i.name</td>
-                    <td>
-                        <a href="@routes.Sections.showEditForm(i.id.get)">
-                            <button class="btn btn-warning">Edit</button>
-                        </a>
-                        <a href="@routes.Sections.remove(i.id.get)">
-                            <button class="btn btn-danger">Delete</button>
-                        </a>
-                    </td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </div>
+            <h1 class="text-center">There our sections</h1>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @for(i<- sections) {
+                    <tr>
+                        <td>@i.name</td>
+                        <td>
+                            <a href="@routes.Sections.showEditForm(i.id.get)">
+                                <button class="btn btn-warning">Edit</button>
+                            </a>
+                            <a href="@routes.Sections.remove(i.id.get)">
+                                <button class="btn btn-danger">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </body>
     @footer("listSections")
 
 }

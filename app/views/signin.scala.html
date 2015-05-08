@@ -1,0 +1,49 @@
+@()
+@main("Sign In") {
+    @navbar("signin")
+    <br/>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <b class="glyphicon glyphicon-user">  Sign in to continue</b>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-offset-1 col-md-10">
+                                <img class="img-circle center-block" src=@routes.Assets.at("images/avatar.png")>
+                                <br/>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </span>
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-lg btn-block">
+                                    Sign in
+                                </button>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span>Don't have an account! <a href="@routes.Application.signUp()">Sign Up Here</a> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @footer("j")
+}

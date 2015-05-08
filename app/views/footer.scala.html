@@ -1,12 +1,13 @@
 @(activePage:String)
 
 <footer id="footer">
+    <hr/>
     <div class="container">
         <div class="row">
             <div class="text-center">
                     &copy;  <a href="#">TUITUF </a>2015.
                 <a href="#">Created by Sevdiyor Hayitov</a>
-                <ul class="text-center">
+                <ul class="text-center list-inline">
                     <li class="@if(activePage == "home") {active}"><a href="@routes.Application.index()">Home</a></li>
                     <li><a href="#">Buyurtma</a></li>
                     <li class="@if(activePage == "kafe") {active}"><a href="@routes.Application.kafe()">Kafe</a></li>

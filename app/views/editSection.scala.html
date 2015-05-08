@@ -3,16 +3,17 @@
 @main("Edit") {
 
     @navbar("addSection")
-
-    <div class="container main-content">
-        <h2 class="text-center">Edit country</h2>
-        <form class="@routes.Sections.update(section.id.get)" method="post">
-            <div class="form-group">
-                <label for="inp-name">Name</label>
-                <input type="text" class="form-control" id="inp-name"
+    <body class="main-bg">
+        <div class="container">
+            <h2 class="text-center">Edit country</h2>
+            <form class="@routes.Sections.update(section.id.get)" method="post">
+                <div class="form-group">
+                    <label for="inp-name">Name</label>
+                    <input type="text" class="form-control" id="inp-name"
                     name="name" value="@section.name" required="">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </body>
 }

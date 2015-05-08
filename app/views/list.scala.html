@@ -1,42 +1,43 @@
 @(something: List[anyForDisp])
 
-@main("Home") {
+@main("Somethings") {
 
     @navbar("list")
+    <body class="main-bg">
+        <div class="container">
 
-    <div class="container main-content">
-
-        <h1 class="text-center">There is our somethings.</h1>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Cost</th>
-                    <th>Section</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-            @for(i <- something) {
-                <tr>
-                    <td>@i.any.name</td>
-                    <td><img style="width: 20%" src="@routes.Assets.at("images/"+i.any.imgUrl)" alt=""/></td>
-                    <td>@i.any.cost</td>
-                    <td>@i.sectionName</td>
-                    <td>
-                        <a href="@routes.First.showEditForm(i.any.id.get)">
-                            <button class="btn btn-warning">Edit</button>
-                        </a>
-                        <a href="@routes.First.remove(i.any.id.get)">
-                            <button class="btn btn-danger">Delete</button>
-                        </a>
-                    </td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </div>
+            <h1 class="text-center">There is our somethings.</h1>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Cost</th>
+                        <th>Section</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @for(i <- something) {
+                    <tr>
+                        <td>@i.any.name</td>
+                        <td><img style="width: 20%" src="@routes.Assets.at("images/"+i.any.imgUrl)" alt=""/></td>
+                        <td>@i.any.cost</td>
+                        <td>@i.sectionName</td>
+                        <td>
+                            <a href="@routes.First.showEditForm(i.any.id.get)">
+                                <button class="btn btn-warning">Edit</button>
+                            </a>
+                            <a href="@routes.First.remove(i.any.id.get)">
+                                <button class="btn btn-danger">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </body>
     @footer("list")
 
 }
